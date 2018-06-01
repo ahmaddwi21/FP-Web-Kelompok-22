@@ -171,3 +171,8 @@ h3{
 .section {
     padding: 70px 0;
 }
+
+.me-caption{
+  background: white;
+  color: black;
+}
