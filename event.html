@@ -173,6 +173,9 @@
             </p>
     </div><br><br>
 </div>
+
+
+
 </div>
 <br><br><br>
 
@@ -193,15 +196,39 @@
             </div>
           </div>
         </div>
-  </div>
-</div>
-<br><br>
+  </div><br><br>
+
+<div class="row text-center">
+<h2>S A R A N</h2><br>
+            <div class="col-sm-4"><br><br><br>
+              Contact :<br><br>
+              <button style="font-size:15px">Facebook <i class="fa fa-facebook-official"></i></button>
+              <button style="font-size:15px">Google +  <i class="fa fa-google-plus-official"></i></button>
+              <button style="font-size:15px">Twitter  <i class="fa fa-twitter-square"></i></button>
+            </div>
+           
+            <div class="col-sm-7">
+               <body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+                  <h5 align="left"><i>Berikan Kritik dan Saran untuk kemajuan kegiatan kami kedepannya</i></h5>
+                  <textarea ng-model="message" cols="102" rows="10"></textarea>
+                  <p align="right">Number of characters left: <span ng-bind="left()"></span></p>
+                  <p align="right">
+                  <button ng-click="save()">Send</button>
+                  <button ng-click="clear()">Clear</button>
+                  </p>
+              </body>
+               
+            </div>
+</div><br></div>
+
+<br><br><br>
 <div id="google_translate_element" align="right"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
+        <script type="text/javascript">
+        function googleTranslateElementInit() 
+        {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
@@ -256,6 +283,22 @@ $(document).ready(function(){
         $(".moreevent").toggle();
     });
 });
+
+var app = angular.module("myNoteApp", []); 
+app.controller("myNoteCtrl", function($scope) {
+    $scope.message = "";
+    $scope.left = function() {
+        return 100 - $scope.message.length;
+    };
+    $scope.clear = function() {
+        $scope.message = "";
+    };
+    $scope.save = function() {
+        alert("Terimakasih telah berpendapat");
+    };
+});
+
+
 </script>
 </body>
 </html>
