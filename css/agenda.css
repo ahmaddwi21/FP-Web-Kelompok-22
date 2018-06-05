@@ -26,6 +26,10 @@ h3{
     padding: 50px;
     color: grey;
 } 
+.art{
+  align-content: left;
+  padding: 50px;
+}
 
  .bgg {
       background: #87ceeb;

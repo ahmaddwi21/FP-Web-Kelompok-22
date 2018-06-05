@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UKHI JASHTIS</title>
+	<title>Contact</title>
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +25,7 @@
     </style>
 	
 </head>
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
 	    <div class="navbar-header">
@@ -34,7 +34,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" href="#myPage">UKHI JASHTIS</a>
+	      <a class="navbar-brand" href="#myPage">CONTACT</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
@@ -50,14 +50,10 @@
 
 <div id="map"></div>
     <script>
-
 function initMap() {
-
   var Amikom = {lat: -7.759929, lng: 110.408966};
-
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 16, center: Amikom});
-
   var marker = new google.maps.Marker({position: Amikom, map: map});
 }
     </script>
@@ -69,9 +65,13 @@ function initMap() {
 <div id="band" class="main main-raised">
 	<div class="contact-content">
 	      <div class="container">
-	      	<h2 class="title">Send us a message</h2>
+
 	      	<div class="row">
-	      		<div class="col-md-6">
+	      		<div class="col-md-3 ml-auto">
+	      			
+	      		</div>
+	      		<div class="col-md-6"><br><br>
+	      			<h2 class="title">Send us a message</h2>
 	      			<p>You can contact us with anything related to our Organization. We'll get in touch with you as soon as possible. </p>
 	      			<form>
 	      				<div class="form-group bmd-form-group">
@@ -95,9 +95,68 @@ function initMap() {
 	      	</div>
 	      </div>
     </div>
+    <br><br>
+
+  <div id="event" class="bgg">
+      <div class="container">
+    <br><br>
+         <div class="row text-center">
+            <div class="col-sm-4">
+             <i class="fa fa-google-plus-official" style="font-size:150px"></i><br><br>
+              <p>medinfo.ukijashtis@gmail.com</p>
+            </div>
+      
+            <div class="col-sm-4">
+               <i class="fa fa-instagram" style="font-size:150px"></i><br><br>
+              <p>https://www.instagram.com/ukijashtis/?hl=en</p>
+              </div>
+            <div class="col-sm-4">
+              <i class="fa fa-facebook-square" style="font-size:150px"></i><br><br>
+              <p>https://www.facebook.com/ukijashtis/?hl=en</p>
+            </div>
+          </div>
+        </div><br><br>
+  </div><br><br>
 </div>
 
+<br><br>
+<div id="google_translate_element" align="right"></div>
+        <script type="text/javascript">
+        function googleTranslateElementInit() 
+        {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>Universitas Amikom Yogyakarta<a href="https://www.amikom.ac.id" data-toggle="tooltip" title="Visit amikom"><br>amikom.ac.id</a></p> 
+</footer>
 
+<script>
+      $(document).ready(function(){
 
+        $('[data-toggle="tooltip"]').tooltip(); 
+        
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      behavior
+          if (this.hash !== "") {
+
+            event.preventDefault();
+
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, function(){
+         
+        
+              window.location.hash = hash;
+            });
+          } 
+        });
+      })
+</script>
 </body>
 </html>
