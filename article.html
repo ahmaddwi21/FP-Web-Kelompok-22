@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ARTICLE</title>
+	<title>UKI JASHTIS</title>
 			 	<meta charset="utf-8">
 			  	<meta name="viewport" content="width=device-width, initial-scale=1">
 			 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,13 +13,33 @@
 				<link rel="stylesheet" type="text/css" href="css/agenda.css">
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+  <script type="text/javascript">
+    var app = angular.module("MyApp",["ngRoute"]);
+    app.config(function($routeProvider){
+      $routeProvider.when('/', {templateUrl:'main.htm'})
+      .when('/profile', {templateUrl:'profile.htm'})
+      .when('/event', {templateUrl:'event.htm'})
+      .when('/article', {templateUrl:'article.htm'});
+    }); 
+
+  </script>
+
+  <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 78vh;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-
+<div ng-app="MyApp">
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
@@ -29,15 +49,15 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" href="#myPage">ARTICLE</a>
+	      <a class="navbar-brand" href="#myPage">UKI JASHTIS</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
-	      	<li><a href="MainPage.html">HOME</a></li>
-	        <li><a href="profile.html">PROFILE</a></li>
+	      	<li><a href="#/!">HOME</a></li>
+	        <li><a href="#!profile">PROFILE</a></li>
 	        <li><a href="contact.html">CONTACT</a></li>
-	        <li><a href="event.html">EVENT</a></li>
-	        <li><a href="article.html">ARTICLE</a></li>
+	        <li><a href="#!event">EVENT</a></li>
+	        <li><a href="#!article">ARTICLE</a></li>
 	      </ul>
 	    </div>
 	  </div>
@@ -90,39 +110,7 @@
 <br><br>
 
 <div id="band" class="main main-raised">
-      <div class="section section-basic">
-      	<div class="container">
-      		<h3 class="text-center">Mengenal Allah Hanya di Bulan Ramadhan Saja</h3>
-      <br><br>
-      	<p>Bulan Ramadhan adalah bulan tarbiyah yang mendidik kita agar terbiasa melakukan berbagai amal shalih, menjadi lebih baik dan meninggalkan segala maksiat yang merugikan diri sendiri. Harusnya setelah Ramadhan, seorang muslim menjadi lebih baik, ada juga orang yang setelah Ramadhan kembali menjadi buruk bahkan lebih buruk daei sebelumnya. Ramadhan hanya ia gunakan momentum sesaat untuk mengenal Allah dan setelah Ramadhan ia berniat untuk kembali bermaksiat kepada Allah dan melupakan Allah sebagai penciptanya.<br><br>
-
-		Syaikn Abdul Aziz bin Baz menjelaskan bahwa makna ungkapam ini adalah benar apabila mereka melalaikan kewajiban-kewajiban agama setelah ramadhan. Semisal Ramadhan rajin shalat dan memakai jilbab, namun setelah Ramadhan shalat bolong-bolong dan kembali melepas jilbab. Beliau menjelaskan,
-
-		“Ungkapan ini adalah benar apabila mereka melalaikan kewajiban-kewajiban agama. Apapun jika tidak, ia hanya meninggalkan sebagian perkara ijtihad. Ungkapan ini adalah benar, akan tetapi maksudnya adalah meninggalkan hal-hal wajib, semisal shalat pada bulam Ramadhan kemudian ia tinggalkan shalat selain bulan Ramadhan, maka ini adalah sejelek-jelek kaum karena mereka telah melakukan kekafiran.<br><br>
-
-		Meninggalkan shalat sangat berbahaya karena Nabi SAW bersabda,
-
-		(Batas) antara seseorang dengan kesyirikan dan kekufuran adalah meninggalkan shalat.”[2]
-
-		Yang sebelumnya melakukan shalat kemudian tidak melakukannya lagi diibaratkan pintalan yang rapi kemudian terurai dan tercerai berai.<br>
-
-		Allah ta'ala berfirman, yang artinya
-
-		Dan janganlah kamu seperti seorang perempuan yang menguraikan benangnya yang sudah dipintal dengan kuat, menjadi cerai berai kembali. (Qs. an-Nahl: 92)<br><br>
-
-		Hendaknya kita sangat berhati-hati dan semoga Allah menolong kita, agar kita tidak berniat jelek, yaitu hanya ingin meninggalkan maksiat di bulan Ramadhan saja, sedangkam selepas Ramadhan kita berniat melakukannya lagi.<br>
-
-		Ibnu Taimiyyah berkata,
-		Barangsiapa bertekad meninggalkan maksiat di bulan Ramadhan saja, tanpa bertekad di bulan lainnya, maka ia bukan seorang yang bertaubat secara mutlak, akan tetapi ia hanyalah sekedar orang yang meninggalkan perbuatan maksiat di bulan Ramadhan</p><br><br>
-
-    <div class="row text-center"><img src="pic/qq.jpg" height="250px" width="450px"><br><br><br></div>
-    <br>
-      	</div>
-      </div>
-<br><br>
-
-
-</div>
+      <ng-view></ng-view>
 </div>
 
 
@@ -158,5 +146,6 @@
         });
       })
 </script>
+</div>
 </body>
 </html>
